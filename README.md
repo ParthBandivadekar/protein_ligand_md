@@ -1,8 +1,7 @@
 # protein_ligand_md
 Guide for setting up a protein ligand system for Amber23
 
-The basic steps in this guide are identical to the tutorial found here
-https://ambermd.org/tutorials/basic/tutorial4b/index.php
+The basic steps in this guide are identical to the tutorial found [here](https://ambermd.org/tutorials/basic/tutorial4b/index.php)
 
 However this guide is context for the troubleshooting tips posted below the guide.
 
