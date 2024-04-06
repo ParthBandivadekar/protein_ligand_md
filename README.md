@@ -1,12 +1,9 @@
 # protein_ligand_md
 Guide for setting up a protein ligand system for Amber23
-
 The basic steps in this guide are identical to the tutorial found [here](https://ambermd.org/tutorials/basic/tutorial4b/index.php)
 
 However this guide is context for the troubleshooting tips posted below the guide.
-
-For this example we will use the enzyme pdb 8dq8
-Link to the [pdb file](https://www.rcsb.org/structure/8dq8)
+For this example we will use the enzyme pdb [8dq8](https://www.rcsb.org/structure/8dq8)
 
 Check pdb file of the complex in Maestro or any other viewing software. For this example we will use Schrodinger Maestro.
 - Import pdb in Maestro. Inspect the structure and note the ligands and protein chains.
