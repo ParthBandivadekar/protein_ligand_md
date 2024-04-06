@@ -1,0 +1,23 @@
+#tleap script to generate parameter topology and restart files. loadoff as many lib and frcmod files as there are ligands.
+source leaprc.protein.ff19SB
+source leaprc.gaff2
+source leaprc.water.opc
+
+loadoff NCT.lib
+loadoff FDA.lib
+loadamberparams NCT.frcmod
+loadamberparams FDA.frcmod
+
+complex = loadpdb 8dq8_prep.pdb
+check complex
+
+addIons complex Na+ 20
+solvatebox complex OPCBOX 15.0
+
+addIons complex Na+ 96
+addIons complex Cl- 96
+setbox complex vdw
+
+saveamberparm complex 8dq8.prmtop 8dq8.rst7
+savepdb complex 8dq8.pdb
+quit
