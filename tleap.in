@@ -1,0 +1,11 @@
+#tleap file for generating lib files for your ligand. Use appropriate forcefield parameters that you used in antechamber
+source leaprc.protein.ff19SB
+source leaprc.gaff2
+
+NCT = loadmol2 NCT.mol2
+check NCT
+
+loadamberparams NCT.frcmod
+saveoff NCT NCT.lib
+saveamberparm NCT NCT.prmtop NCT.rst7
+quit
