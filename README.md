@@ -27,4 +27,4 @@ Add `at gaff2` flag if you want to use gaff2
 ```tleap -f tleap2.in```
 
 You will find the input files for the MD simulation on [Dr. Ahn's Github](https://github.com/shirleyahn/amber_scripts/tree/main)
-The [troubleshooting guide](Troubleshooting) will help you with any errors you encounter during this process and will be a repository for any future Amber errors which I resolve.
+The [troubleshooting guide](Troubleshooting.md) will help you with any errors you encounter during this process and will be a repository for any future Amber errors which I resolve.
