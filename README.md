@@ -14,7 +14,8 @@ Check pdb file of the complex in Maestro or any other viewing software. For this
 - Export the ligands as .mol2 files
 - Run antechamber
  ```antechamber -i Ligand_h.mol2 -fi mol2 -o Ligand.mol2 -fo mol2 -c bcc -s 2```
-Add `at gaff2` flag if you want to use gaff2 
+Add `at gaff2` flag if you want to use gaff2
+Add `nc` flag if your ligand is charged
 - If Antechamber runs without errors, tail the sqm.out which will be generated and check if the calculation is complete.
 - Repeat these steps for NCT and any more ligands you have.
 - The generated mol2 files will contain information about the parametrization of the ligands
