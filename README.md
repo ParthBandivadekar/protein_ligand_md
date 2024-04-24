@@ -13,8 +13,8 @@ Check pdb file of the complex in Maestro or any other viewing software. For this
 - Cross check protonation states of each atom with literature. Make sure to protonate/deprotonate each atom correctly with the right number of H.
 - Export the ligands as .mol2 files
 - Run antechamber
- ```antechamber -i Ligand_h.mol2 -fi mol2 -o Ligand.mol2 -fo mol2 -c bcc -s 2```
-Add `at gaff2` flag if you want to use gaff2
+ ```antechamber -i Ligand_h.mol2 -fi mol2 -o Ligand.mol2 -fo mol2 -c bcc -s 2``` <br>
+Add `at gaff2` flag if you want to use gaff2 <br>
 Add `nc` flag if your ligand is charged
 - If Antechamber runs without errors, tail the sqm.out which will be generated and check if the calculation is complete.
 - Repeat these steps for NCT and any more ligands you have.
