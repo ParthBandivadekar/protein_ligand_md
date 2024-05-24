@@ -1,4 +1,4 @@
-Guide for making good figures using PyMOL3. <br>
+<b> Guide for making good figures using PyMOL3. </b> <br>
 This guide assumes that you have installed PyMOL3. If not, follow the instructions on the [PyMOL](https://pymol.org/) website. <br>
 
 Open PyMOL and import your structure. For this tutorial I am using PDB 1GNS. After importing it should look like this. <br>
