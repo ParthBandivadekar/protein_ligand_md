@@ -45,9 +45,9 @@ The valence state of the carbon between the two Nitrogens is being reported as 5
 - Thus we have to go through the rest of the Histidines and fix their residue names.
 - This problem can happen for other residues as well.
 - Here is a table of residues that can have different protonation states
-|                                            |               |
-| ------------------------------------------ | ------------- |
-| Non-standard Protonation Form              | AMBER Resname |
+
+|         Non-standard Protonation Form      | AMBER Resname |
+| ------------------------------------------ | ------------- |      
 | Protonated/uncharged Asp                   | ASH           |
 | Protonated/uncharged Glu                   | GLH           |
 | Deprotonated/uncharged Lys                 | LYN           |
@@ -56,6 +56,7 @@ The valence state of the carbon between the two Nitrogens is being reported as 5
 | Charged His (protonated at both positions) | HIP           |
 | Deprotonated Cys or Cys bound to a metal   | CYM           |
 | Cys involved in disulfide bridge           | CYX           |
+
 
 
 
