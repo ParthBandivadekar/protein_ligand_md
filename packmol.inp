@@ -1,0 +1,33 @@
+add_amber_ter
+avoid_overlap yes
+# All atoms from diferent molecules will be at least 2.0 Angstroms apart
+tolerance 2.0
+
+# The type of the files will be pdb
+filetype pdb
+
+# The name of the output file
+output solute.pdb
+
+# put the COM of the solute at the center of the box
+structure 8dsv_p.pdb
+  number 1
+  fixed 53.272 53.269 53.467 0. 0. 0.
+  centerofmass
+  resnumbers 1 
+end structure
+
+# add first type of solvent molecules
+#structure H2O.pdb
+ # number 41000
+ #inside cube 0. 0. 0. 106.544 106.537 126.934
+ #resnumbers 3
+ #movefrac 0.05
+#end structure
+
+# add second type of solvent molecules
+structure dioxygen.pdb
+  number 100
+  inside cube 0. 0. 0. 106.544 106.537 126.934
+  resnumbers 3
+end structure
