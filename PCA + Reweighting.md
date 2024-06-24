@@ -1,6 +1,8 @@
-This guide will detail how to do Principal Component Analysis of your GaMD simulation, Reweighting the Free Energy surface and plotting the principal components to get a free energy diagram
+This guide will detail how to do Principal Component Analysis of your GaMD simulation, Reweighting the Free Energy surface and plotting the principal components to get a free energy diagram.
+
 Prerequisites: 
 - Basic understanding of running a [GaMD simulation](https://www.med.unc.edu/pharm/miaolab/resources/gamd/)
+- Basic understanding of Principal Component Analysis.
 - prmtop, nc and gamd1.log file from your GaMD simulation
 - PyReweighting-2D file from the [Miaolab github](https://github.com/MiaoLab20/pyreweighting)
 - Scripts located in this github repo.
