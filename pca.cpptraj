@@ -1,0 +1,143 @@
+#####################################################
+# Load two topologies, each with a different        #
+# name handler depicted inside []                   #
+#####################################################
+parm strip.PTDH_13.prmtop 
+
+#####################################################
+# Load two different trajectories                   #
+# each with their respective topology.              #
+# Each trajectory is 10001 frames long, so          #
+# we will have a dataset of 20002 frames long,      #
+# the first 10001 frames correspond to the cpu      #
+# frames and the from 10002 to 20002, correspond    #
+# to the GPU frames.                                #
+#####################################################
+trajin PTDH_G13strip.nc 1 last 1
+
+#####################################################
+# Move and translate the coordinates so they will   #
+# fit as close as possible to the first frame.      #
+# Only fit residues 1 through 890                   #
+# and ignore everything that matches the atom 'H'   #
+# This means that no hydrogen atoms are going to be #
+# part of the fitting.                              #
+#####################################################
+rms first :1-326&!@H=
+
+#####################################################
+# Create an average structure considering all       #
+# the loaded frames and save it as a single frame   #
+# using the AMBER restart format                    #
+#####################################################
+average crdset average
+
+#####################################################
+# CPPTRAJ works with datasets of multiple formats   #
+# create a coordinate dataset that refers to the    #
+# loaded frames. Call the loaded frames             #
+# 'cpu-gpu-trajectories'                            #
+#####################################################
+createcrd trajectories
+
+#####################################################
+# Run the commands because we need our reference    #
+# structure. With the 'run' command, the            #
+# commands so far will run and will generate our    #
+# average reference structure with the AMBER        #
+# restart format                                    #
+#####################################################
+run
+
+#####################################################
+# Fit our frames, which we named:                   #
+# gamd-trajectories                                 #
+# to the previously loaded average structure        #
+# Always use the same mask                          #
+#####################################################
+crdaction trajectories rms ref average :1-326&!@H=
+
+#####################################################
+# Calculate coordinate covariance matrix            #
+#####################################################
+crdaction trajectories matrix covar \
+name covar :1-326&!@H=
+
+#####################################################
+# Diagonalize coordinate covariance matrix          #
+# Get first 2 eigenvectors                          #
+#####################################################
+runanalysis diagmatrix covar out evecs.dat \
+vecs 2 name myEvecs \
+nmwiz nmwizvecs 2 nmwizfile dna.nmd nmwizmask :1-326&!@H=
+
+#runanalysis diagmatrix gamd-covar out evececs 246 name myEvecs :1-326&!.H=
+#runanalysis modes eigenval name myEvecs out evalfrac.dat
+
+#####################################################
+# Now create separate projections                   #
+# for each set of trajectories                      # 
+#####################################################
+crdaction trajectories projection GAMD modes myEvecs \
+beg 1 end 2 :1-326&!@H=
+
+crdaction trajectories projection modes myEvecs beg 1 end 2 :1-326&!@H= out pca.dat crdframes 1,last
+#####################################################
+# Make a normalized histogram of the 2              #
+# calculated projections                            # 
+#####################################################
+
+hist GAMD:1 bins 100 out gamd-hist.agr norm name GAMD-1
+#hist GAMD:2 bins 100 out gamd-hist.agr norm name GAMD-2
+
+#####################################################
+# Run the analysis                                  #
+# ** cross-fingers **                               #
+#####################################################
+
+run
+
+#####################################################
+#####################################################
+# DELETE EVERYTHING AND START FRESH                 #
+#####################################################
+#####################################################
+clear all
+
+
+#####################################################
+# Visualize the fluctuations of the eigenmodes      #
+# Read the file with the eigenvectores              #
+#####################################################
+readdata evecs.dat name Evecs
+
+
+#####################################################
+# Load a topology                                   #
+# This is necesary to create a new topology         #
+# that will match the read in eigenmodes
+#####################################################
+parm strip.PTDH_13.prmtop
+parmstrip !(:1-326&!@H=)
+parmwrite out modes-PTDH.prmtop
+
+#####################################################
+# Create a NetCDF trajectory file with the          #
+# modes of motion of the first PCA                  #
+#####################################################
+runanalysis modes name Evecs trajout mode1.nc \
+pcmin -100 pcmax 100 tmode 1 trajoutmask :1-326&!@H= trajoutfmt netcdf
+
+#runanalysis diagmatrix gamd-covar out evececs 246 name myEvecs :1-326&!.H=
+#runanalysis modes eigenval name myEvecs out evalfrac.dat
+
+#runanalysis modes name Evecs trajout gamd-mode2.nc \
+#pcmin -100 pcmax 100 tmode 2 trajoutmask :1-890&!@H= trajoutfmt netcdf
+
+#####################################################
+# Now you can open the files:                       #
+# cpu-gpu-modes.prmtop                              #
+# cpu-gpu-modes.nc                                  #
+# in Chimera / VMD and watch the movie              #
+# which shows the first mode of motion              #
+#####################################################
