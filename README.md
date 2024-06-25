@@ -1,4 +1,4 @@
-This github repository contained guides on the various aspects of running and analysing molecular dynamics simulations for biomolecular systems. <br>
+This repository contained guides on the various aspects of running and analysing molecular dynamics simulations for biomolecular systems. <br>
 <b> The contents of this repository are meant for my own documentation and for use by members of [Ahn Lab](https://www.sahnlab.com/team). </b> <br>
 However you are free to use the resources within for your own purposes.
 
