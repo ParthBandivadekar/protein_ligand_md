@@ -11,8 +11,8 @@ However you are free to use the resources within for your own purposes.
 6. Video explaining [PyMOL](https://youtu.be/FZcoLd0_rMw?feature=shared) in depth
 
 <b> Future Work </b>
-1. Adding troubleshooting tips to the guide.
+1. Adding more troubleshooting tips to the guide.
 2. Adding more PyMOL example scripts.
-3. Adding a guide on setting up packmol + tleap hybrid systems for non standard solvents.
+3. Finishing the guide on setting up packmol + tleap hybrid systems for non standard solvents.
 
  For any doubts or suggestions email prbandivadekar@ucdavis.edu.
