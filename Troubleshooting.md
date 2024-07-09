@@ -43,6 +43,7 @@ The valence state of the carbon between the two Nitrogens is being reported as 5
 - If we rerun the tleap script we can see that HIE 115 is no longer showing an error.
 - ![image](https://github.com/ParthBandivadekar/protein_ligand_md/assets/159869420/39392c93-7c7f-4571-8d64-9c06b238dd58)
 - Thus we have to go through the rest of the Histidines and fix their residue names.
+- If the histidine does not have a positively charged Nitrogen but is still showing an error then it should be renamed to HID.
 - This problem can happen for other residues as well.
 - Here is a table of residues that can have different protonation states
 
