@@ -1,0 +1,2 @@
+Sorting .dat files numerically ```sort -k2,2n rmsd2.dat > sorted_rmsd2.dat```
+
