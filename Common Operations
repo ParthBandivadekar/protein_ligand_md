@@ -1,6 +1,27 @@
 # Flavoenzyme 
 
 1. To extract all the frame values within a certain threshold from a nativecontacts file
-awk '$4 < 6 {print $1, $4}' X_O2.dat > X_O2contact.dat
+> awk '$4 < 6 {print $1, $4}' X_O2.dat > X_O2contact.dat
 
-2. 
+2. TCL script to force protein to stay in the center of the screen while keep relative movement of other molecules around it in VMD
+
+> set ref [atomselect top "protein and backbone" frame 0]
+set sel [atomselect top "protein and backbone"]
+set all [atomselect top all]
+
+# Align the protein to the reference
+for {set i 0} {$i < [molinfo top get numframes]} {incr i} {
+    $sel frame $i
+    set M [measure fit $sel $ref]
+    $all frame $i
+    $all move $M
+}
+
+$ref delete
+$sel delete
+$all delete
+>
+
+# PTDH
+
+1. Sorting .dat files numerically > sort -k2,2n rmsd2.dat > sorted_rmsd2.dat
