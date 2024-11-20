@@ -1,0 +1,6 @@
+# Flavoenzyme 
+
+1. To extract all the frame values within a certain threshold from a nativecontacts file
+awk '$4 < 6 {print $1, $4}' X_O2.dat > X_O2contact.dat
+
+2. 
