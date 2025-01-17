@@ -25,3 +25,27 @@ $all delete
 # PTDH
 
 1. Sorting .dat files numerically > sort -k2,2n rmsd2.dat > sorted_rmsd2.dat
+
+# PyMOL
+
+set antialias=1
+
+set orthoscopic=1
+
+set gamma=1.15
+
+set cartoon_fancy_helices, 1
+
+set cartoon_fancy_sheets, 1
+
+set specular, 0
+
+set ray_shadows, 0
+
+set ray_trace_fog, 1
+
+set cartoon_discrete_colors, on
+
+set cartoon_sampling, 15
+
+bg_color white
