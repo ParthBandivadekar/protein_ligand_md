@@ -58,7 +58,7 @@ The valence state of the carbon between the two Nitrogens is being reported as 5
 | Deprotonated Cys or Cys bound to a metal   | CYM           |
 | Cys involved in disulfide bridge           | CYX           |
 
-- The endgoal is to make a script to automatically fix these issues. However PDB files are very sensitive to change so I would recommend keeping the process manual until I upload a script I am confident in.
+These changes can now be automated using (this script)[fix_protonation.py]
 
 
 
