@@ -58,7 +58,7 @@ The valence state of the carbon between the two Nitrogens is being reported as 5
 | Deprotonated Cys or Cys bound to a metal   | CYM           |
 | Cys involved in disulfide bridge           | CYX           |
 
-These changes can now be automated using (this script)[fix_protonation.py]
+These changes can now be automated using [this script](fix_protonation.py)
 
 
 
