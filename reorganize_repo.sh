@@ -77,8 +77,9 @@ fi
 #    – *.pml, PyMOL-based Python scripts → scripts/pymol/
 #    – Any other .py for analysis → scripts/analysis/
 
-# 6a. Move all .sh and .in files that presumably belong to cpptraj
+# 6a. Move all .sh and .in files (except reorganize_repo.sh) into scripts/cpptraj/
 find . -maxdepth 1 -type f \( -name "*.sh" -o -name "*.in" \) \
+  ! -name "reorganize_repo.sh" \
   -exec bash -c 'for f; do git mv "$f" scripts/cpptraj/; done' bash {} +
 
 # 6b. Move PyMOL scripts (.pml) and any “generate_*_pymol.py” to scripts/pymol
