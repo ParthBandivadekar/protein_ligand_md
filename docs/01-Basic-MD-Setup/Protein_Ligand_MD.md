@@ -9,7 +9,7 @@ Check pdb file of the complex in Maestro or any other viewing software. For this
 - Import pdb in Maestro. Inspect the structure and note the ligands and protein chains.
 - Delete any waters or ions which may be present in the pdb file.
 - Prepare Protein structure. Double check to make sure the Ligands match the one in literature.
-- Copy Ligands to new entries in Maestro.
+- Copy Ligands to new entries in Maestro. Make sure you expande the ligand to full residues before copying to a new entry otherwise it wont copy over the hydrogens. Name the new entry with the same 3 letter residue name you wish to give to the ligand.
 - Cross check protonation states of each atom with literature. Make sure to protonate/deprotonate each atom correctly with the right number of H.
 - Export the ligands as .mol2 files
 - Run antechamber
